@@ -9,6 +9,12 @@ const SearchHeader = ({ onSearch }) => {
     setSearchQuery(e.target.value);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   const handleSearch = () => {
     onSearch(searchQuery);
   };
@@ -26,6 +32,7 @@ const SearchHeader = ({ onSearch }) => {
             placeholder="Search Hacker News"
             value={searchQuery}
             onChange={handleInputChange}
+            onKeyDown={handleKeyPress} 
           />
           <div className="search-text" onClick={handleSearch}>Search</div>
         </div>
