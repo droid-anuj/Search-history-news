@@ -14,7 +14,7 @@ const HomePage = () => {
       try {
         setLoading(true); 
         const response = await fetch(
-          `http://hn.algolia.com/api/v1/search?query=${searchQuery}`
+          `https://hn.algolia.com/api/v1/search?query=${searchQuery}`
         );
         const data = await response.json();
         setResponseData(data);
